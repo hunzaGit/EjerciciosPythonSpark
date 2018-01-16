@@ -9,9 +9,10 @@ import re
 
 for line in sys.stdin:
 	words = re.split(',', line)
-	print( words[0]  + "\t" +  words[4])
+	anyo = re.split('-', words[0])[0]
+	print( anyo  + "\t" +  words[4])
 
-	
+
 
 
 '''

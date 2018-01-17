@@ -12,13 +12,13 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
 
 
 ## Ejercicio 1 - MapReduce Programming
-### [1.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_1/Ejer_1.3)
+### [1.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer1.3)
   Calcular el precio de cotización promedio diario al cierre de Alphabet Inc. (GOOG) por año desde 2009 usando el patrón MapReduce
  - **Input**: CSV con los datos de cotización de Google. Obtenidos [Yahoo Finance](https://finance.yahoo.com/quote/GOOG/history?ltr=1)
  - **Output**: Tuplas con el año y el precio promedio
  
  #### Ejecución
- 	*Dar permisos de ejecucion a los ficheros antes de ejecutar*
+ 	*Dar permisos de ejecución a los ficheros antes*
   
     $ ./mapper.py < GOOG.csv | sort | ./reducer.py >> output.txt
     

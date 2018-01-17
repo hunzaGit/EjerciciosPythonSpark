@@ -11,15 +11,3 @@ for line in sys.stdin:
 	words = re.split(',', line)
 	anyo = re.split('-', words[0])[0]
 	print( anyo  + "\t" +  words[4])
-
-
-
-
-'''
-for line in sys.stdin:
-    line = re.sub( r'^\W+|\W+$', '', line )
-    words = re.split(r"\W+", line)
-    
-    for word in words:
-        print( word.lower() + "\t1" )
-'''

@@ -18,8 +18,8 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
  - **Output**: Tuplas con el año y el precio promedio
  
  #### Ejecución
- 	*Dar permisos de ejecución a los ficheros antes*
-  
+ 	
+    $ chmod + x mapper.py reducer.py
     $ ./mapper.py < GOOG.csv | sort | ./reducer.py >> output.txt
     
 

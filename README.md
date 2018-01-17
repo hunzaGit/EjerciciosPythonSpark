@@ -10,7 +10,21 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
  - **Scala** 2.11.8
 
 
-## Ejercicio 2
+
+## Ejercicio 1 - MapReduce Programming
+### [1.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_1/Ejer_1.3)
+  Calcular el precio de cotización promedio diario al cierre de Alphabet Inc. (GOOG) por año desde 2009 usando el patrón MapReduce
+ - **Input**: CSV con los datos de cotización de Google. Obtenidos [Yahoo Finance](https://finance.yahoo.com/quote/GOOG/history?ltr=1)
+ - **Output**: Tuplas con el año y el precio promedio
+ 
+ #### Ejecución
+ 	*Dar permisos de ejecucion a los ficheros antes de ejecutar*
+  
+    $ ./mapper.py < GOOG.csv | sort | ./reducer.py >> output.txt
+    
+
+
+## Ejercicio 2 - Spark Programming
 ### [2.1 Distributed Grep](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.1)
   Realizar una funcion similar a la de la herramineta grep para buscar palabras en documentos grandes
  - **Input**: Libro de Moby Dick en .txt
@@ -32,7 +46,7 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
     
 
 ### [2.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.3)
-  Calcular el precio de cotización promedio diario al cierre de Alphabet Inc. (GOOG)por año desde 2009
+  Calcular el precio de cotización promedio diario al cierre de Alphabet Inc. (GOOG) por año desde 2009
  - **Input**: CSV con los datos de cotización de Google. Obtenidos [Yahoo Finance](https://finance.yahoo.com/quote/GOOG/history?ltr=1)
  - **Output**: Tuplas con el año y el precio promedio
  

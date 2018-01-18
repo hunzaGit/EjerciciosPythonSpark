@@ -22,3 +22,7 @@ for line in sys.stdin:
             
             sum = sum + float( value )
             acum += 1
+
+
+
+print previous  + '\t' + str( (sum/acum) ) 

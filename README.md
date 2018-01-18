@@ -76,10 +76,11 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
   > -lc lista las clases de Meteorito (CUIDADO: lista con 460 elementos) (o --listClase) <br>
  
 #### Ejecución Map Reduce
- 
-    $ chmod +x mapper.py reducer.py
-    $ ./mapper.py < Meteorite_Landings.csv [-Param] [valueParam] | sort | ./reducer.py >> output.txt
-
+```shell
+    $ chmod +x mapper.py reducer.py
+    $ ./mapper.py < Meteorite_Landings.csv [-Param] [valueParam] | sort | ./reducer.py >> output.txt
+```
 #### Ejecución Spark
- 
-    $ spark-submit ejer3.py [-Param] [valueParam]
+```javascript
+    $ spark-submit ejer3.py [-Param] [valueParam]
+```

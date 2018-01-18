@@ -65,15 +65,15 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
     
 
 ## [Ejercicio 3 - Meteorite Landing](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_3)
-  Calcular la masa promedio por año de un tipo de meteorito especificado como un argumento
- - **Input**: CSV que consiste en 45,717 meteoritos e incluye campos como el tipo de meteorito, la masa y el año. Obtenidos de 
+  Calcular la masa promedio por año de un tipo de meteorito especificado como un argumento
+ - **Input**: CSV que consiste en 45,717 meteoritos e incluye campos como el tipo de meteorito, la masa y el año. Obtenidos de 
  [NASA's Open Data Portal](https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh)
  - **Output**: Lista con el año y la masa media de los meteoritos del tipo especificado
 
 ### Parametros posibles: 
-  > -t tipoMeteoro ['Valid', 'Relict'] (o --tipo)
-  > -c claseMeteoro [una de las clases de meteorio] (o --clase)
-  > -lc lista las clases de Meteorito (CUIDADO: lista con 460 elementos) (o --listClase)
+  > -t tipoMeteoro ['Valid', 'Relict'] (o --tipo) <br>
+  > -c claseMeteoro [una de las clases de meteorio] (o --clase) <br>
+  > -lc lista las clases de Meteorito (CUIDADO: lista con 460 elementos) (o --listClase) <br>
  
 #### Ejecución Map Reduce
  

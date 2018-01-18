@@ -17,9 +17,9 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
  - **Input**: CSV con los datos de cotización de Google. Obtenidos [Yahoo Finance](https://finance.yahoo.com/quote/GOOG/history?ltr=1)
  - **Output**: Tuplas con el año y el precio promedio
  
- #### Ejecución
+#### Ejecución
  	
-    $ chmod + x mapper.py reducer.py
+    $ chmod +x mapper.py reducer.py
     $ ./mapper.py < GOOG.csv | sort | ./reducer.py >> output.txt
     
 
@@ -28,9 +28,9 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
 ### [2.1 Distributed Grep](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.1)
   Realizar una funcion similar a la de la herramineta grep para buscar palabras en documentos grandes
  - **Input**: Libro de Moby Dick en .txt
- - **Output**: Nuero de linea en la que aparece la palabra buscada
+ - **Output**: Número de linea en la que aparece la palabra buscada
  
- #### Ejecución
+#### Ejecución
  
     $ spark-submit ejer21.py ${PALABRA_BUSCADA} 
     
@@ -40,7 +40,7 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
  - **Input**: Log de apache. Fichero obtenido de [MonitorWare](http://www.monitorware.com/es/logsamples/apache.php)
  - **Output**: Tuplas con la URL y su frecuencia
  
- #### Ejecución
+#### Ejecución
   
     $ spark-submit ejer22.py 
     
@@ -50,7 +50,7 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
  - **Input**: CSV con los datos de cotización de Google. Obtenidos [Yahoo Finance](https://finance.yahoo.com/quote/GOOG/history?ltr=1)
  - **Output**: Tuplas con el año y el precio promedio
  
- #### Ejecución
+#### Ejecución
   
     $ spark-submit ejer23.py 
    
@@ -59,7 +59,27 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
  - **Input**: Un fichero CSV con películas y otro con las calificaciones de usuarios. Obtenidos de [GroupLens](https://grouplens.org/datasets/movielens/)
  - **Output**: Tuplas (en el rango pedido) con el el id de película, título y la calificación promedio
  
- #### Ejecución
+#### Ejecución
   
     $ spark-submit ejer24.py ${RANGO_DE_CALIFICACION}
     
+
+## [Ejercicio 3 - Meteorite Landing](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_3)
+  Calcular la masa promedio por año de un tipo de meteorito especificado como un argumento
+ - **Input**: CSV que consiste en 45,717 meteoritos e incluye campos como el tipo de meteorito, la masa y el año. Obtenidos de 
+ [NASA's Open Data Portal](https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh)
+ - **Output**: Lista con el año y la masa media de los meteoritos del tipo especificado
+
+### Parametros posibles: 
+  > -t tipoMeteoro ['Valid', 'Relict'] (o --tipo)
+  > -c claseMeteoro [una de las clases de meteorio] (o --clase)
+  > -lc lista las clases de Meteorito (CUIDADO: lista con 460 elementos) (o --listClase)
+ 
+#### Ejecución Map Reduce
+ 
+    $ chmod +x mapper.py reducer.py
+    $ ./mapper.py < Meteorite_Landings.csv [-Param] [valueParam] | sort | ./reducer.py >> output.txt
+
+#### Ejecución Spark
+ 
+    $ spark-submit ejer3.py [-Param] [valueParam]

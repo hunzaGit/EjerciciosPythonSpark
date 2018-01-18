@@ -1,5 +1,6 @@
 # Ejercicios Python Spark 
-Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](http://www.fdi.ucm.es/Pub/ImpresoFichaDocente.aspx?Id=1312) del Grado de Ingenieria del Software, se ejecutan en una instancia EC2 con una maquina virtual Ubuntu en AWS. [Enunciado del profesor](UCM_-_CLO_-_Fall_2017_-_HW_-_Parallel_Data_Processing.pdf)
+
+Ejercicios de MapReduce y  Spark en Python para la asignatura [Cloud Computing and Big Data](http://www.fdi.ucm.es/Pub/ImpresoFichaDocente.aspx?Id=1312) del Grado de Ingenieria del Software, se ejecutan en una instancia EC2 con una maquina virtual Ubuntu en AWS. [Enunciado del profesor](UCM_-_CLO_-_Fall_2017_-_HW_-_Parallel_Data_Processing.pdf)
 
 ## Entorno
 
@@ -14,6 +15,17 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
 
 
 ## Ejercicio 1 - MapReduce Programming
+
+
+### [1.1 Distributed Grep](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.1)
+  Realizar una funcion similar a la de la herramineta grep para buscar palabras en documentos grandes
+ - **Input**: Libro de Moby Dick en .txt
+ - **Output**: Número de linea en la que aparece la palabra buscada
+ 
+#### Ejecución
+```shell
+$ ./P11_mapper.py < input.txt | sort | ./P11_reducer.py ${PALABRA_BUSCADA} >> output.txt
+```
 
 ### [1.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer1.3)
   Calcular el precio de cotización promedio diario al cierre de Alphabet Inc. (GOOG) por año desde 2009 usando el patrón MapReduce

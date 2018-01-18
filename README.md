@@ -11,7 +11,10 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
 
 
 
+
+
 ## Ejercicio 1 - MapReduce Programming
+
 ### [1.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer1.3)
   Calcular el precio de cotización promedio diario al cierre de Alphabet Inc. (GOOG) por año desde 2009 usando el patrón MapReduce
  - **Input**: CSV con los datos de cotización de Google. Obtenidos [Yahoo Finance](https://finance.yahoo.com/quote/GOOG/history?ltr=1)
@@ -19,12 +22,16 @@ Ejercicios de Spark en Python para la asignatura [Cloud Computing and Big Data](
  
 #### Ejecución
 ```shell
-$ chmod +x mapper.py reducer.py
-$ ./mapper.py < GOOG.csv | sort | ./reducer.py >> output.txt
+$ chmod +x P13_mapper.py P13_reducer.py
+$ ./P13_mapper.py < GOOG.csv | sort | ./P13_reducer.py >> output.txt
 ```
 
 
+
+
+
 ## Ejercicio 2 - Spark Programming
+
 ### [2.1 Distributed Grep](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.1)
   Realizar una funcion similar a la de la herramineta grep para buscar palabras en documentos grandes
  - **Input**: Libro de Moby Dick en .txt
@@ -32,7 +39,7 @@ $ ./mapper.py < GOOG.csv | sort | ./reducer.py >> output.txt
  
 #### Ejecución
 ```shell
-$ spark-submit ejer21.py ${PALABRA_BUSCADA} 
+$ spark-submit P21_spark.py ${PALABRA_BUSCADA} 
 ```
     
 ### [2.2 Count URL Access Frequency](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.2)
@@ -42,7 +49,7 @@ $ spark-submit ejer21.py ${PALABRA_BUSCADA}
  
 #### Ejecución
 ```shell
-$ spark-submit ejer22.py 
+$ spark-submit P22_spark.py 
 ```
 
 ### [2.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.3)
@@ -52,7 +59,7 @@ $ spark-submit ejer22.py
  
 #### Ejecución
 ```shell
-$ spark-submit ejer23.py 
+$ spark-submit P23_spark.py 
 ```
 
 ### [2.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_2/Ejer_2.4)
@@ -62,8 +69,11 @@ $ spark-submit ejer23.py
  
 #### Ejecución
 ```shell
-$ spark-submit ejer24.py ${RANGO_DE_CALIFICACION}
+$ spark-submit P24_spark.py ${RANGO_DE_CALIFICACION}
 ```
+
+
+
 
 ## [Ejercicio 3 - Meteorite Landing](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_3)
   Calcular la masa promedio por año de un tipo de meteorito especificado como un argumento
@@ -79,11 +89,11 @@ $ spark-submit ejer24.py ${RANGO_DE_CALIFICACION}
 #### Ejecución Map Reduce
 
 ```shell
-$ chmod +x mapper.py reducer.py
-$ ./mapper.py < Meteorite_Landings.csv [-Param] [valueParam] | sort | ./reducer.py >> output.txt
+$ chmod +x P3_mapper.py P3_reducer.py
+$ ./P3_mapper.py < Meteorite_Landings.csv [-Param] [valueParam] | sort | ./P3_reducer.py >> output.txt
 ```
 
 #### Ejecución Spark
 ```shell
-$ spark-submit ejer3.py [-Param] [valueParam]
+$  spark-submit P3_spark.py [-Param] [valueParam]
 ```

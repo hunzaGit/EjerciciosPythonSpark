@@ -5,11 +5,6 @@ import sys
 # Date  massValue
 # 1880  21
 
-# 1880 10
-# 1880 20
-# 1981 50000
-# 1981 100000
-
 previous = None
 sum = 0
 acum = 0

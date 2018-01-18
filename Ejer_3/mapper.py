@@ -33,10 +33,9 @@ def salir():
  - Instruduzca un tipo o clase de meteorito como segundo parametro para ver la masa media por anyo:
  		-t tipoMeteoro ['Valid', 'Relict'] (o --tipo)
  		-c claseMeteoro [una de las clases de meteorio] (o --clase)
- 		-lc lista las clases de Meteorito (CUIDADO: lista con 460 elementos) (o --listClase)
-*****************************************************************"""
+*****************************************************************
+"""
 	sys.exit(string)
-
 
 
 if len(sys.argv)>=3:
@@ -50,9 +49,6 @@ if len(sys.argv)>=3:
 			paramClaseMeteo = sys.argv[2]
 		else:
 			salir()
-	elif sys.argv[1] == '-lc' or sys.argv[1] == '--listClase':
-		print recclass
-		salir()
 	else:
 		salir()
 else:

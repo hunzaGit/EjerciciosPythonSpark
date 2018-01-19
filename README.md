@@ -52,6 +52,24 @@ $ ./P13_mapper.py < GOOG.csv | sort | ./P13_reducer.py >> output.txt
 ```
 
 
+### [2.4 Movie Rating Data](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer_1.4)
+  **Apartado A**: Mostrar las películas con su calificación promedio
+  **Apartado B**: Mostrar las películas con una calificación promedio en los ragos de 1 a 5
+ - **Input**: Un fichero CSV con películas y otro con las calificaciones de usuarios. Obtenidos de [GroupLens](https://grouplens.org/datasets/movielens/)
+ - **Output**: Tuplas (en el rango pedido) con el el id de película, título y la calificación promedio
+ 
+#### Ejecución A
+```shell
+$ chmod +x P14a_mapper.py P14a_redducer.py
+$ ./P14a_mapper.py movies.csv ratings.csv | sort | ./P14a_redducer.py
+```
+
+#### Ejecución B
+```shell
+$ chmod +x P14b_mapper.py P14b_redducer.py
+$ ./P14b_mapper.py movies.csv ratings.csv | sort | ./P14b_redducer.py ${RANGO_DE_CALIFICACION}
+```
+
 
 
 
@@ -87,7 +105,7 @@ $ spark-submit P22_spark.py
 $ spark-submit P23_spark.py 
 ```
 
-### [2.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_2/Ejer_2.4)
+### [2.3 Movie Rating Data](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_2/Ejer_2.4)
   Mostrar las películas con una calificación promedio en los ragos de 1 a 5
  - **Input**: Un fichero CSV con películas y otro con las calificaciones de usuarios. Obtenidos de [GroupLens](https://grouplens.org/datasets/movielens/)
  - **Output**: Tuplas (en el rango pedido) con el el id de película, título y la calificación promedio

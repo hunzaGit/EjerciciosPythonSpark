@@ -25,8 +25,20 @@ Ejercicios de MapReduce y  Spark en Python para la asignatura [Cloud Computing a
 #### Ejecución
 ```shell
 $ ./P11_mapper.py < input.txt | sort | ./P11_reducer.py ${PALABRA_BUSCADA} >> output.txt
-$ cat input.txt | ./P11_mapper.py | ./P11_reducer.py sea sort -r -n -k2 > out.txt
 ```
+
+
+### [2.2 Count URL Access Frequency](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer_1.2)
+  Contar la frecuencia de cada URL en un log de un servidor web
+ - **Input**: Log de apache. Fichero obtenido de [MonitorWare](http://www.monitorware.com/es/logsamples/apache.php)
+ - **Output**: Tuplas con la frecuencia y la URL
+ 
+#### Ejecución
+```shell
+$ ./P12_mapper.py < access_log | sort | ./P11_reducer.py >> output.txt
+```
+
+
 
 ### [1.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer1.3)
   Calcular el precio de cotización promedio diario al cierre de Alphabet Inc. (GOOG) por año desde 2009 usando el patrón MapReduce

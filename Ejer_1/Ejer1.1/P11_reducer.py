@@ -2,17 +2,18 @@
 import sys
 
 dictionary = {}
+## hacer más snecillos
 
 
 def add_line(token, entry_number):
     dictionary[token] = int(entry_number)
 
 def lookfor_word(palabra):
-	print("Numero de las lineas en las que aparece la palabra "+ palabra + ":")
+	#print("Numero de las lineas en las que aparece la palabra "+ palabra + ":")
 	for line in dictionary:
 
 		if palabra in line:
-   			sys.stdout.write(str(dictionary[line])+"\n")
+   			print dictionary[line]
 
 
 

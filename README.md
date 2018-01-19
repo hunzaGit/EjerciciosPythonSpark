@@ -25,6 +25,7 @@ Ejercicios de MapReduce y  Spark en Python para la asignatura [Cloud Computing a
 #### Ejecución
 ```shell
 $ ./P11_mapper.py < input.txt | sort | ./P11_reducer.py ${PALABRA_BUSCADA} >> output.txt
+$ cat input.txt | ./P11_mapper.py | ./P11_reducer.py sea sort -r -n -k2 > out.txt
 ```
 
 ### [1.3 Stock Summary](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer1.3)

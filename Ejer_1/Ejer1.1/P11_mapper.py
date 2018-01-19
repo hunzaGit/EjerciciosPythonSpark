@@ -4,11 +4,13 @@ import sys
 def print_lines(lineas):
     for i,linea in enumerate(lineas):
     	if len(linea) > 0:
-        	sys.stdout.write(linea+"\n")
+        	print linea
 
-contenido_archivo = sys.stdin.read()
-lineas = contenido_archivo.splitlines()
-print_lines(lineas)
+#contenido_archivo = sys.stdin.read()
+
+#lineas = contenido_archivo.splitlines()
+for lineas in sys.stdin:
+	print_lines(lineas)
 
 
 

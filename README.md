@@ -17,7 +17,7 @@ Ejercicios de MapReduce y  Spark en Python para la asignatura [Cloud Computing a
 ## Ejercicio 1 - MapReduce Programming
 
 
-### [1.1 Distributed Grep](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.1)
+### [1.1 Distributed Grep](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer1.1)
   Realizar una funcion similar a la de la herramineta grep para buscar palabras en documentos grandes
  - **Input**: Libro de Moby Dick en .txt
  - **Output**: Número de linea en la que aparece la palabra buscada
@@ -28,7 +28,7 @@ $ ./P11_mapper.py < input.txt | sort | ./P11_reducer.py ${PALABRA_BUSCADA} >> ou
 ```
 
 
-### [2.2 Count URL Access Frequency](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer_1.2)
+### [1.2 Count URL Access Frequency](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer1.2)
   Contar la frecuencia de cada URL en un log de un servidor web
  - **Input**: Log de apache. Fichero obtenido de [MonitorWare](http://www.monitorware.com/es/logsamples/apache.php)
  - **Output**: Tuplas con la frecuencia y la URL

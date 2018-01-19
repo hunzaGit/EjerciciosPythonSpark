@@ -7,22 +7,38 @@ import fileinput
 movies = sys.argv[1]
 ratings = sys.argv[2]
 dicmovies = dict()
+
+
+# Dos tipos distintos
+# ['39,Clueless (1995),Comedy|Romance']
+# ['40,' , 'Cry, the Beloved Country (1995)' , ',Drama']
+def formatearTitulo(line):
+	if len(line) == 1:
+		line = line[0].split(',')
+	if len(line) >= 1:
+		id = line[0].split(',')[0]
+	return (id, line[1])
+
+
+# in: movieId,title,genres
 for linea in fileinput.input(movies):
-    if not fileinput.isfirstline():
-		encontrado = linea.find(',"', 0, len(linea))
-		if encontrado != -1:
-			linea = linea.replace('",', '"//')
-			linea = linea.replace(',"', '//"')
-			linea= linea.split('//')
+	idM = ''
+	titulo = ''
+   	if not fileinput.isfirstline():
+		linea = linea.split('"')
+		idM, titulo = formatearTitulo(linea)
+
+		if idM in dicmovies:
+			dicmovies[idM].append(titulo)
 		else:
-			linea = linea.split(',')
-		if linea[0] in dicmovies:
-			dicmovies[linea[0]].append(linea[1],linea[2])
-		else:
-			dicmovies[linea[0]] = [linea[1],linea[2]]
-			
+			dicmovies[idM] = titulo
+
+
+# in: userId,movieId,rating,timestamp
 for linea in fileinput.input(ratings):
-    if not fileinput.isfirstline():
+   	if not fileinput.isfirstline():
 		linea = linea.split(',')
-		linea[1]=dicmovies[linea[1]][0]
-		print(str(linea[0])+','+str(linea[1])+','+str(linea[2])+','+str(linea[3]))
+		idM = linea[1]
+		titulo = dicmovies[idM]
+		print(str(idM)+'__'+str(titulo)+'__'+str(linea[2]))
+# out: movieId, title, rating

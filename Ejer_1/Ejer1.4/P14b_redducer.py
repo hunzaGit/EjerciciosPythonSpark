@@ -1,31 +1,34 @@
 #!/usr/bin/python
-
 import sys
-import re
-import fileinput
 
-dicmovies = dict()
 rango = sys.argv[1]
-for linea in sys.stdin:
-	if linea == "\n":
-		continue
-	encontrado = linea.find(',"', 0, len(linea))
-	if encontrado != -1:
-		linea = linea.replace('",', '"//')
-		linea = linea.replace(',"', '//"')
-		linea= linea.split('//')
-	else:
-		linea = linea.split(',')
-	valoracion = linea[2].split(',')
-	if linea[1] in dicmovies:		
-		dicmovies[linea[1]][0]=float(dicmovies[linea[1]][0]) + float(valoracion[0])
-		dicmovies[linea[1]][1] += 1
-	else:
-		dicmovies[linea[1]] = [valoracion[0]]
-		dicmovies[linea[1]].append(1)
-		
-for word in dicmovies:
-	media = float(dicmovies[word][0])/dicmovies[word][1]
-	if media < int(rango) && media >= int(rango)-1:
-		print(str(word)+" " +str(media)+"\n")
-	
+
+
+def imprimirresult(idM, titulo, media):
+	if media <= int(rango) and media > int(rango)-1:
+		print(str(idM) + ", " + titulo + ", " + str(media))
+
+# in: movieId, title, rating
+previousID = None
+previousTitle = None
+sum = 0
+acum = 0
+
+for line in sys.stdin:
+
+    idM, title, rating = line.split( '__' )
+    
+    if idM != previousID: # Distinto elemeneto
+        if previousID is not None: # no es el priemro elemento
+            imprimirresult(previousID, previousTitle, (sum/acum) ) 
+        previousID = idM
+        previousTitle = title
+        sum = 0
+        acum = 0
+    
+    sum = sum + float( rating )
+    acum += 1
+
+
+
+imprimirresult(previousID, previousTitle, (sum/acum) ) 

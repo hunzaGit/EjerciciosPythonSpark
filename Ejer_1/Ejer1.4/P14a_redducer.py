@@ -1,27 +1,28 @@
 #!/usr/bin/python
-
 import sys
-import re
-import fileinput
 
-dicmovies = dict()
+
+# in: movieId, title, rating
+previousID = None
+previousTitle = None
+sum = 0
+acum = 0
 
 for line in sys.stdin:
-	encontrado = linea.find(',"', 0, len(linea))
-	if encontrado != -1:
-		linea = linea.replace('",', '"//')
-		linea = linea.replace(',"', '//"')
-		linea= linea.split('//')
-	else:
-		linea = linea.split(',')
-	if linea[1] in dicmovies:		
-		dicmovies[linea[1]][0]=dicmovies[linea[1]][0] + linea[2]
-		dicmovies[linea[1]][1] += 1
-	else:
-		dicmovies[linea[1]] = [linea[2]]
-		dicmovies[linea[1]].append(1])
-		
-for word in dicmovies:
-	media = dicmovies[word][0]/dicmovies[word][1]
-    print(word+" " +str(media)+"\n")
-	
+
+    idM, title, rating = line.split( '__' )
+    
+    if idM != previousID: # Distinto elemeneto
+        if previousID is not None: # no es el priemro elemento
+            print previousID  + ', ' + previousTitle + ', ' + str( (sum/acum) ) 
+        previousID = idM
+        previousTitle = title
+        sum = 0
+        acum = 0
+    
+    sum = sum + float( rating )
+    acum += 1
+
+
+
+print previousID  + ', ' + previousTitle + ', ' + str( (sum/acum) )

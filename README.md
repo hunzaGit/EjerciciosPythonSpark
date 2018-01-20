@@ -1,6 +1,6 @@
 # Ejercicios Python Spark 
 
-Ejercicios de MapReduce y  Spark en Python para la asignatura [Cloud Computing and Big Data](http://www.fdi.ucm.es/Pub/ImpresoFichaDocente.aspx?Id=1312) del Grado de Ingenieria del Software, se ejecutan en una instancia EC2 con una maquina virtual Ubuntu en AWS. [Enunciado del profesor](UCM_-_CLO_-_Fall_2017_-_HW_-_Parallel_Data_Processing.pdf)
+Ejercicios de MapReduce y Spark en Python para la asignatura [Cloud Computing and Big Data](http://www.fdi.ucm.es/Pub/ImpresoFichaDocente.aspx?Id=1312) del Grado de Ingeniería del Software, se ejecutan en una instancia EC2 con una máquina virtual Ubuntu en AWS. [Enunciado del profesor](UCM_-_CLO_-_Fall_2017_-_HW_-_Parallel_Data_Processing.pdf)
 
 ## Entorno
 
@@ -11,14 +11,15 @@ Ejercicios de MapReduce y  Spark en Python para la asignatura [Cloud Computing a
  - **Scala** 2.11.8
 
 
-
+## Enlace a Github
+   - https://github.com/hunzaGit/EjerciciosPythonSpark
 
 
 ## Ejercicio 1 - MapReduce Programming
 
 
 ### [1.1 Distributed Grep](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer1.1)
-  Realizar una funcion similar a la de la herramineta grep para buscar palabras en documentos grandes
+  Realizar una función similar a la de la herramineta grep para buscar palabras en documentos grandes
  - **Input**: Libro de Moby Dick en .txt
  - **Output**: Número de linea en la que aparece la palabra buscada
  
@@ -54,7 +55,7 @@ $ ./P13_mapper.py < GOOG.csv | sort | ./P13_reducer.py >> output.txt
 
 ### [2.4 Movie Rating Data](https://github.com/hunzaGit/EjerciciosPythonSpark/tree/master/Ejer_1/Ejer_1.4)
   **Apartado A**: Mostrar las películas con su calificación promedio
-  **Apartado B**: Mostrar las películas con una calificación promedio en los ragos de 1 a 5
+  **Apartado B**: Mostrar las películas con una calificación promedio en los ragos de 1 a 5 pasado por parámetro
  - **Input**: Un fichero CSV con películas y otro con las calificaciones de usuarios. Obtenidos de [GroupLens](https://grouplens.org/datasets/movielens/)
  - **Output**: Tuplas (en el rango pedido) con el el id de película, título y la calificación promedio
  
@@ -76,7 +77,7 @@ $ ./P14b_mapper.py movies.csv ratings.csv | sort | ./P14b_redducer.py ${RANGO_DE
 ## Ejercicio 2 - Spark Programming
 
 ### [2.1 Distributed Grep](https://github.com/hunzaGit/EjerciciosPythonSpark/blob/master/Ejer_2/Ejer_2.1)
-  Realizar una funcion similar a la de la herramineta grep para buscar palabras en documentos grandes
+  Realizar una función similar a la de la herramienta grep para buscar palabras en documentos grandes
  - **Input**: Libro de Moby Dick en .txt
  - **Output**: Número de linea en la que aparece la palabra buscada
  
@@ -127,7 +128,6 @@ $ spark-submit P24_spark.py ${RANGO_DE_CALIFICACION}
 ### Parametros posibles: 
   > -t tipoMeteoro ['Valid', 'Relict'] (o --tipo) <br>
   > -c claseMeteoro [una de las clases de meteorio] (o --clase) <br>
-  > -lc lista las clases de Meteorito (CUIDADO: lista con 460 elementos) (o --listClase) <br>
  
 #### Ejecución Map Reduce
 
